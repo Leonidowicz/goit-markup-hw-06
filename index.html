@@ -61,42 +61,57 @@
           <div class="modal">
             <h2 class="modal__title">Оставьте свои данные, мы вам перезвоним</h2>
 
-            <form class="modal__form" action=" ">
-              <label class="modal__lable" for="username">Имя</label>
-              <input class="modal__input" type="text" name="userName" id="username" />
+            <form class="modal__form js-speaker-form" action=" ">
+              <svg class="modal__closed" data-modal-close>
+                <use href="./images/svg/symbol-defs.svg#close"></use>
+              </svg>
+              <div class="modal__element">
+                <label class="modal__lable" for="username">Имя</label>
+                <input class="modal__input" type="text" name="userName" id="username" /><svg
+                  class="modal__lable-icon"
+                >
+                  <use href="./images/svg/symbol-defs.svg#person-black"></use>
+                </svg>
+              </div>
 
-              <label class="modal__lable" for="phone">Телефон</label>
-              <input class="modal__input" type="number" name="phone" id="phone" />
+              <div class="modal__element">
+                <label class="modal__lable" for="phone">Телефон </label>
+                <input class="modal__input" type="tel" name="phone" id="phone" /><svg
+                  class="modal__lable-icon"
+                >
+                  <use href="./images/svg/symbol-defs.svg#phone-black"></use>
+                </svg>
+              </div>
 
-              <label class="modal__lable" for="email">Почта</label>
-              <input class="modal__input" type="email" name="email" id="email" />
+              <div class="modal__element">
+                <label class="modal__lable" for="email">Почта</label>
+                <input class="modal__input" type="email" name="email" id="email" />
+                <svg class="modal__lable-icon">
+                  <use href="./images/svg/symbol-defs.svg#email-black"></use>
+                </svg>
+              </div>
 
-              <label class="modal__lable" for="comment">Комментарий</label>
-              <textarea
-                placeholder="Введите текст"
-                class="modal__comment"
-                name="comment"
-                id="comment"
-                cols="30"
-                rows="10"
-              ></textarea>
+              <div class="modal__element">
+                <label class="modal__lable" for="comment">Комментарий</label>
+                <textarea
+                  placeholder="Введите текст"
+                  class="modal__comment"
+                  name="comment"
+                  id="comment"
+                  cols="30"
+                  rows="10"
+                ></textarea>
+              </div>
 
-              <input
-                class="modal__checkbox visuallyhidden"
-                type="checkbox"
-                name="checkbox"
-                id="checkbox"
-              />
-              <label class="modal__checkbox--label" for="checkbox"
-                >Соглашаюсь с рассылкой и принимаю
-                <a class="modal__agreement" href="#"> Условия договора</a></label
-              >
+              <label class="modal__check">
+                <input class="modal__input-check visuallyhidden" type="checkbox" name="checkbox" />
+                <span class="modal__checkbox"></span>
+                Соглашаюсь с рассылкой и принимаю
+                <a class="modal__agreement" href="#"> Условия договора</a>
+              </label>
+
               <button class="modal__batton btn" type="submit">Отправить</button>
             </form>
-
-            <svg class="closed" data-modal-close>
-              <use href="./images/svg/symbol-defs.svg#close"></use>
-            </svg>
           </div>
         </div>
       </section>
@@ -405,6 +420,17 @@
         </div>
       </div>
     </footer>
+    <script>
+      (() => {
+        document.querySelector('.js-speaker-form').addEventListener('submit', e => {
+          e.preventDefault();
+
+          new FormData(e.currentTarget).forEach((value, name) => console.log(`${name}: ${value}`));
+
+          e.currentTarget.reset();
+        });
+      })();
+    </script>
     <script src="./js/modal.js"></script>
   </body>
 </html>
