@@ -480,7 +480,7 @@ address a {
 
   width: 16px;
   height: 15px;
-  background-image: image(href '../images/svg/icon check.svg);
+  background-image: image(href '../images/svg/icon check.svg');
 }
 
 .modal__agreement {
