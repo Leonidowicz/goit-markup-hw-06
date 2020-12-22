@@ -487,11 +487,23 @@ address a {
 }
 .modal__check,
 .modal__agreement {
+  position: relative;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.7;
   letter-spacing: 0.03em;
   color: var(--text);
+}
+.modal__agreement::after {
+  position: absolute;
+  bottom: 5px;
+  left: 0px;
+  display: block;
+  content: ' ';
+  width: 100%;
+  height: 1px;
+
+  background-color: var(--elements);
 }
 .modal__check {
   position: relative;
