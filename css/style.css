@@ -245,18 +245,24 @@ address a {
   font-style: normal;
   color: var(--foter-gray);
 }
+
 .footer-social h2 {
   margin-top: 72px;
   margin-bottom: 20px;
-  color: var(--lite-bg);
+
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
   letter-spacing: 0.03em;
+
+  color: var(--lite-bg);
 }
 .social-links a {
   background-color: var(--footer-black);
+}
+.footer_social {
+  fill: var(--lite-bg);
 }
 .subscribe {
   margin-top: 72px;
